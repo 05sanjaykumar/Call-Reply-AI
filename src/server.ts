@@ -9,6 +9,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get("/", (_req: Request, res: Response) => {
+  res.send("Server is alive");
+});
+
 app.post("/call-status", (req: Request, res: Response) => {
   console.log("\n📞 CALL EVENT RECEIVED");
   console.log(req.body);
